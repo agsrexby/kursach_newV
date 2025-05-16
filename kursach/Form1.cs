@@ -129,21 +129,220 @@ namespace kursach
         {
             richTextBox1.SelectAll();
         }
-
-        private void вызовСправкиToolStripMenuItem_Click(object sender, EventArgs e)
+        
+        private void постановкаЗадачиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Путь к PDF-файлу (относительно исполняемого файла программы)
-            string pdfPath = "Resources\\Manual.pdf";
-
             try
             {
-                // Открываем PDF-файл с помощью программы по умолчанию
-                Process.Start(pdfPath);
+                // 1. Получаем PDF из ресурсов (как byte[])
+                byte[] pdfBytes = Properties.Resources.Task;
+
+                // 2. Сохраняем во временный файл
+                string tempPdfPath = Path.Combine(Path.GetTempPath(), "temp_document.pdf");
+                File.WriteAllBytes(tempPdfPath, pdfBytes);
+
+                // 3. Запускаем программу для просмотра PDF
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = tempPdfPath,
+                    UseShellExecute = true // Открыть через ассоциированную программу
+                });
             }
             catch (Exception ex)
             {
-                // Если что-то пошло не так, показываем сообщение об ошибке
-                MessageBox.Show($"Не удалось открыть файл справки: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
+        private void грамматикаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 1. Получаем PDF из ресурсов (как byte[])
+                byte[] pdfBytes = Properties.Resources.Grammar;
+
+                // 2. Сохраняем во временный файл
+                string tempPdfPath = Path.Combine(Path.GetTempPath(), "temp_document.pdf");
+                File.WriteAllBytes(tempPdfPath, pdfBytes);
+
+                // 3. Запускаем программу для просмотра PDF
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = tempPdfPath,
+                    UseShellExecute = true // Открыть через ассоциированную программу
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
+        private void классификацияГрамматикиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 1. Получаем PDF из ресурсов (как byte[])
+                byte[] pdfBytes = Properties.Resources.klasif_grammar;
+
+                // 2. Сохраняем во временный файл
+                string tempPdfPath = Path.Combine(Path.GetTempPath(), "temp_document.pdf");
+                File.WriteAllBytes(tempPdfPath, pdfBytes);
+
+                // 3. Запускаем программу для просмотра PDF
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = tempPdfPath,
+                    UseShellExecute = true // Открыть через ассоциированную программу
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void методАнализаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 1. Получаем PDF из ресурсов (как byte[])
+                byte[] pdfBytes = Properties.Resources.analiz;
+
+                // 2. Сохраняем во временный файл
+                string tempPdfPath = Path.Combine(Path.GetTempPath(), "temp_document.pdf");
+                File.WriteAllBytes(tempPdfPath, pdfBytes);
+
+                // 3. Запускаем программу для просмотра PDF
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = tempPdfPath,
+                    UseShellExecute = true // Открыть через ассоциированную программу
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
+        private void диагностикаИНейтрализацияОшибокToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 1. Получаем PDF из ресурсов (как byte[])
+                byte[] pdfBytes = Properties.Resources.diagnost;
+
+                // 2. Сохраняем во временный файл
+                string tempPdfPath = Path.Combine(Path.GetTempPath(), "temp_document.pdf");
+                File.WriteAllBytes(tempPdfPath, pdfBytes);
+
+                // 3. Запускаем программу для просмотра PDF
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = tempPdfPath,
+                    UseShellExecute = true // Открыть через ассоциированную программу
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
+        private void тестовыйПримерToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 1. Получаем PDF из ресурсов (как byte[])
+                byte[] pdfBytes = Properties.Resources.test;
+
+                // 2. Сохраняем во временный файл
+                string tempPdfPath = Path.Combine(Path.GetTempPath(), "temp_document.pdf");
+                File.WriteAllBytes(tempPdfPath, pdfBytes);
+
+                // 3. Запускаем программу для просмотра PDF
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = tempPdfPath,
+                    UseShellExecute = true // Открыть через ассоциированную программу
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
+        private void списокЛитературыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 1. Получаем PDF из ресурсов (как byte[])
+                byte[] pdfBytes = Properties.Resources.litera;
+
+                // 2. Сохраняем во временный файл
+                string tempPdfPath = Path.Combine(Path.GetTempPath(), "temp_document.pdf");
+                File.WriteAllBytes(tempPdfPath, pdfBytes);
+
+                // 3. Запускаем программу для просмотра PDF
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = tempPdfPath,
+                    UseShellExecute = true // Открыть через ассоциированную программу
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
+        private void исходныйКодПрограммыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 1. Получаем PDF из ресурсов (как byte[])
+                byte[] pdfBytes = Properties.Resources.listing;
+
+                // 2. Сохраняем во временный файл
+                string tempPdfPath = Path.Combine(Path.GetTempPath(), "temp_document.pdf");
+                File.WriteAllBytes(tempPdfPath, pdfBytes);
+
+                // 3. Запускаем программу для просмотра PDF
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = tempPdfPath,
+                    UseShellExecute = true // Открыть через ассоциированную программу
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
+        private void вызовСправкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 1. Получаем PDF из ресурсов (как byte[])
+                byte[] pdfBytes = Properties.Resources.manual;
+
+                // 2. Сохраняем во временный файл
+                string tempPdfPath = Path.Combine(Path.GetTempPath(), "temp_document.pdf");
+                File.WriteAllBytes(tempPdfPath, pdfBytes);
+
+                // 3. Запускаем программу для просмотра PDF
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = tempPdfPath,
+                    UseShellExecute = true // Открыть через ассоциированную программу
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -60,6 +60,36 @@ namespace kursach.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] analiz {
+            get {
+                object obj = ResourceManager.GetObject("analiz", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] diagnost {
+            get {
+                object obj = ResourceManager.GetObject("diagnost", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Grammar {
+            get {
+                object obj = ResourceManager.GetObject("Grammar", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap icons8_вставить_50 {
@@ -166,6 +196,66 @@ namespace kursach.Properties {
             get {
                 object obj = ResourceManager.GetObject("icons8_файл_50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] klasif_grammar {
+            get {
+                object obj = ResourceManager.GetObject("klasif_grammar", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] listing {
+            get {
+                object obj = ResourceManager.GetObject("listing", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] litera {
+            get {
+                object obj = ResourceManager.GetObject("litera", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] manual {
+            get {
+                object obj = ResourceManager.GetObject("manual", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Task {
+            get {
+                object obj = ResourceManager.GetObject("Task", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] test {
+            get {
+                object obj = ResourceManager.GetObject("test", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }
