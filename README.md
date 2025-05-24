@@ -39,7 +39,9 @@
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/096ef0dc-67a5-4946-99b7-e627d3a0bb65" />
 
 
-<img width="663" alt="image" src="https://github.com/user-attachments/assets/15285d2f-6898-46f8-9dd1-e6927d15e382" />
+
+
+<img width="1000" alt="image" src="https://github.com/user-attachments/assets/15285d2f-6898-46f8-9dd1-e6927d15e382" />
 
 
 Построить РВ для того, чтобы найти все годы между 2010 и
