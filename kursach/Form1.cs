@@ -458,6 +458,47 @@ namespace kursach
                 MessageBoxIcon.Information
             );
         }
+        
+        private void toolStripButton12_Click(object sender, EventArgs e)
+        {
+            string input = richTextBox1.Text;
+            string pattern = @"<!--.*?-->";
+            Regex regex = new Regex(pattern, RegexOptions.Singleline); // Singleline - чтобы . захватывал \n
+        
+            MatchCollection matches = regex.Matches(input);
+        
+            foreach (Match match in matches)
+            {
+                richTextBox2.Text += match.Value;
+            }
+        }
+        
+        private void toolStripButton13_Click(object sender, EventArgs e)
+        {
+            string input = richTextBox1.Text;
+            string pattern = @"\b(20(1[0-9]|2[0-4]))\b";
+        
+            MatchCollection matches = regex.Matches(input, pattern);
+        
+            foreach (Match match in matches)
+            {
+                richTextBox2.Text += match.Value;
+            }
+        }
+        
+        private void toolStripButton14_Click(object sender, EventArgs e)
+        {
+            string input = richTextBox1.Text;
+            string pattern = @"^(?:[a-zA-Z]:\\|\\\\[^\\\/:*?""<>|\r\n]+\\[^\\\/:*?""<>|\r\n]+\\|\.{0,2}\\)?(?:[^\\\/:*?""<>|\r\n]+\\)*[^\\\/:*?""<>|\r\n]*$";
+        
+            Regex regex = new Regex(pattern);
+        
+            
+            foreach (string path in input)
+            {
+                richTextBox2.Text += $"{path} – {(regex.IsMatch(path) ? "Valid" : "Invalid")}";
+            }
+        }
 
         private void richTextBox2_TextChanged(object sender, EventArgs e)
         {
