@@ -44,6 +44,9 @@
 <img width="1500" alt="image" src="https://github.com/user-attachments/assets/15285d2f-6898-46f8-9dd1-e6927d15e382" />
 
 
+
+<img width="533" alt="image" src="https://github.com/user-attachments/assets/debafeb6-8313-4218-9f3f-1a61ed47829e" />
+
 Построить РВ для того, чтобы найти все годы между 2010 и
 2024.
 
@@ -57,6 +60,11 @@
 1[0-9] – от 10 до 19 (годы 2010–2019).
 2[0-4] – от 20 до 24 (годы 2020–2024).
 \b – закрывающая граница слова.
+
+
+<img width="533" alt="image" src="https://github.com/user-attachments/assets/c9772be2-991c-4070-b8f7-a13b67f27bcf" />
+
+
 
 Построить РВ, описывающее путь к файлу в Windows.
 
@@ -75,6 +83,11 @@
 (?:[^\\\/:*?"<>|\r\n]+\\)* – любое количество папок (без запрещённых символов).
 [^\\\/:*?"<>|\r\n]* – имя файла (может быть пустым для папок).
 Конец строки ($) – гарантирует, что путь не содержит лишних символов.
+
+
+<img width="532" alt="image" src="https://github.com/user-attachments/assets/8bbe81ce-6e63-4343-9a9c-86528dbbb6be" />
+
+
 
 <img width="252" alt="image" src="https://github.com/user-attachments/assets/cb1383d8-8541-424f-a2ce-b6b898beb503" />
 
