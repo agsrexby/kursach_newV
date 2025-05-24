@@ -36,7 +36,8 @@
 
 Построить РВ, описывающее HTML-комментарии.
 
-@"<.!--.*?-->"
+<img width="78" alt="image" src="https://github.com/user-attachments/assets/096ef0dc-67a5-4946-99b7-e627d3a0bb65" />
+
 
 Разбор регулярного выражения:
 
