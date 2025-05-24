@@ -41,7 +41,7 @@
 
 
 
-<img width="1000" alt="image" src="https://github.com/user-attachments/assets/15285d2f-6898-46f8-9dd1-e6927d15e382" />
+<img width="1500" alt="image" src="https://github.com/user-attachments/assets/15285d2f-6898-46f8-9dd1-e6927d15e382" />
 
 
 Построить РВ для того, чтобы найти все годы между 2010 и
