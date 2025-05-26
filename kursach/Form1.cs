@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Windows.Forms;
 using System;
+using System.Text.RegularExpressions;
 
 namespace kursach
 {
@@ -478,25 +479,37 @@ namespace kursach
             string input = richTextBox1.Text;
             string pattern = @"\b(20(1[0-9]|2[0-4]))\b";
         
-            MatchCollection matches = regex.Matches(input, pattern);
+            MatchCollection matches = Regex.Matches(input, pattern);
         
             foreach (Match match in matches)
             {
-                richTextBox2.Text += match.Value;
+                richTextBox2.Text += match.Value + " ";
             }
         }
-        
+
         private void toolStripButton14_Click(object sender, EventArgs e)
         {
-            string input = richTextBox1.Text;
+            string[] paths = {
+                "C:\\Windows\\System32\\cmd.exe",
+                "\\\\Server\\Share\\file.txt",
+                "Folder\\Subfolder\\document.docx",
+                ".\\config.json",
+                "..\\archive.zip",
+                "invalid|file.txt"  // Невалидный путь
+            };
+            richTextBox1.Text = "C:\\Windows\\System32\\cmd.exe" + "\\\\Server\\Share\\file.txt" +
+                "Folder\\Subfolder\\document.docx" +
+                ".\\config.json" +
+                "..\\archive.zip" +
+                "invalid|file.txt";
             string pattern = @"^(?:[a-zA-Z]:\\|\\\\[^\\\/:*?""<>|\r\n]+\\[^\\\/:*?""<>|\r\n]+\\|\.{0,2}\\)?(?:[^\\\/:*?""<>|\r\n]+\\)*[^\\\/:*?""<>|\r\n]*$";
-        
+
             Regex regex = new Regex(pattern);
-        
-            
-            foreach (string path in input)
+
+            // Разбиваем текст на отдельные строки для проверки
+            foreach (string path in paths)
             {
-                richTextBox2.Text += $"{path} – {(regex.IsMatch(path) ? "Valid" : "Invalid")}";
+                richTextBox2.Text += $"{path} – {(regex.IsMatch(path) ? "Valid" : "Invalid")}\n";
             }
         }
 

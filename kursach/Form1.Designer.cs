@@ -440,7 +440,7 @@
             this.toolStripButton13.Name = "toolStripButton13";
             this.toolStripButton13.Size = new System.Drawing.Size(55, 55);
             this.toolStripButton13.Text = "Reg year";
-            this.toolStripButton13.Click += new System.EventHandler(this.toolStripButton12_Click);
+            this.toolStripButton13.Click += new System.EventHandler(this.toolStripButton13_Click);
             // 
             // toolStripButton14
             // 
@@ -452,7 +452,7 @@
             this.toolStripButton14.Name = "toolStripButton14";
             this.toolStripButton14.Size = new System.Drawing.Size(55, 55);
             this.toolStripButton14.Text = "Reg path";
-            this.toolStripButton14.Click += new System.EventHandler(this.toolStripButton13_Click);
+            this.toolStripButton14.Click += new System.EventHandler(this.toolStripButton14_Click);
             // 
             // richTextBox1
             // 
