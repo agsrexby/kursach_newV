@@ -32,6 +32,84 @@
 2. Вызов справки: Открывает это руководство пользователя. 
 3. О программе: Показывает информацию о программе, включая версию и автора.
 
+
+# Лабораторная работа 2
+Персональный вариант: Лямбда-выражения языка Java
+
+## В соответствии с заданием второй лабораторной работы необходимо:
+- Спроектировать диаграмму состояний сканера.
+- Разработать лексический анализатор, позволяющий выделить в тексте лексемы, иные символы считать недопустимыми.
+- Встроить сканер в ранее разработанный интерфейс текстового редактора. Учесть, что текст для разбора может состоять из множества строк.
+
+Входные данные - строка (текст программного кода).
+Выходные данные - последовательность условных кодов, описывающих структуру разбираемого текста с указанием места положения и типа ("число", "идентификатор", "знак", "недопустимый символ" и т.д.). 
+Окно вывода результатов можно реализовать в виде таблицы (элемент управления DataGridView). Столбцы таблицы представляют собой условный код, тип лексемы, лексема и ее местоположение.
+## Примеры допустимых строк:
+- operation = (x,y,z)->x+(y*z);
+
+# Лабораторная работа 3
+
+1) <LAMBDA_EXPRESSION> -> <PARAMETERS> "->" <EXPRESSION>
+2) <PARAMETERS> -> "(" <IDENTIFIER_LIST> ")"
+3) <IDENTIFIER_LIST> -> <IDENTIFIER> <IDENTIFIER_TAIL>
+4) <IDENTIFIER_TAIL> -> "," <IDENTIFIER> <IDENTIFIER_TAIL>
+5) <IDENTIFIER_TAIL> -> ε
+6) <EXPRESSION> -> <TERM> <EXPRESSION_TAIL>
+7) <EXPRESSION_TAIL> -> "+" <TERM> <EXPRESSION_TAIL>
+8) <EXPRESSION_TAIL> -> "-" <TERM> <EXPRESSION_TAIL>
+9) <EXPRESSION_TAIL> -> ε
+10) <TERM> -> <FACTOR> <TERM_TAIL>
+11) <TERM_TAIL> -> "*" <FACTOR> <TERM_TAIL>
+12) <TERM_TAIL> -> "/" <FACTOR> <TERM_TAIL>
+13) <TERM_TAIL> -> ε
+14) <FACTOR> -> <IDENTIFIER>
+15) <FACTOR> -> "(" <EXPRESSION> ")"
+16) <IDENTIFIER> -> <LETTER> <IDENTIFIER_TAIL>
+17) <IDENTIFIER_TAIL> -> <LETTER> <IDENTIFIER_TAIL>
+18) <IDENTIFIER_TAIL> -> "_" <IDENTIFIER_TAIL>
+19) <IDENTIFIER_TAIL> -> ε
+<LETTER> -> "a" | "b" | ... | "z" | "A" | "B" | ... | "Z"
+Следуя введенному формальному определению грамматики, представим G[‹LambdaExpression›] ее составляющими:
+•	Z = ‹ LAMBDA_EXPRESSION›;
+•	VT = {a, b, ..., z, A, B, ..., Z, _, =, +, -, *, /, (, ), ,, ->};
+•	VN = {<LAMBDA_EXPRESSION>, <PARAMETERS>, <IDENTIFIER_LIST>, <IDENTIFIER_TAIL>, <EXPRESSION>, <TERM>, <TERM_TAIL>, <FACTOR>, <IDENTIFIER>, <IDENTIFIER_TAIL>, <LETTER>}.
+
+
+<img width="441" alt="image" src="https://github.com/user-attachments/assets/719fdde5-186a-409a-8628-9e130408dfc6" />
+
+
+# Лабораторная работа 4
+
+1) <LAMBDA_EXPRESSION> -> <PARAMETERS> "->" <EXPRESSION>
+2) <PARAMETERS> -> "(" <IDENTIFIER_LIST> ")"
+3) <IDENTIFIER_LIST> -> <IDENTIFIER> <IDENTIFIER_TAIL>
+4) <IDENTIFIER_TAIL> -> "," <IDENTIFIER> <IDENTIFIER_TAIL>
+5) <IDENTIFIER_TAIL> -> ε
+6) <EXPRESSION> -> <TERM> <EXPRESSION_TAIL>
+7) <EXPRESSION_TAIL> -> "+" <TERM> <EXPRESSION_TAIL>
+8) <EXPRESSION_TAIL> -> "-" <TERM> <EXPRESSION_TAIL>
+9) <EXPRESSION_TAIL> -> ε
+10) <TERM> -> <FACTOR> <TERM_TAIL>
+11) <TERM_TAIL> -> "*" <FACTOR> <TERM_TAIL>
+12) <TERM_TAIL> -> "/" <FACTOR> <TERM_TAIL>
+13) <TERM_TAIL> -> ε
+14) <FACTOR> -> <IDENTIFIER>
+15) <FACTOR> -> "(" <EXPRESSION> ")"
+16) <IDENTIFIER> -> <LETTER> <IDENTIFIER_TAIL>
+17) <IDENTIFIER_TAIL> -> <LETTER> <IDENTIFIER_TAIL>
+18) <IDENTIFIER_TAIL> -> "_" <IDENTIFIER_TAIL>
+19) <IDENTIFIER_TAIL> -> ε
+<LETTER> -> "a" | "b" | ... | "z" | "A" | "B" | ... | "Z"
+Следуя введенному формальному определению грамматики, представим G[‹LambdaExpression›] ее составляющими:
+•	Z = ‹ LAMBDA_EXPRESSION›;
+•	VT = {a, b, ..., z, A, B, ..., Z, _, =, +, -, *, /, (, ), ,, ->};
+•	VN = {<LAMBDA_EXPRESSION>, <PARAMETERS>, <IDENTIFIER_LIST>, <IDENTIFIER_TAIL>, <EXPRESSION>, <TERM>, <TERM_TAIL>, <FACTOR>, <IDENTIFIER>, <IDENTIFIER_TAIL>, <LETTER>}.
+
+
+<img width="441" alt="image" src="https://github.com/user-attachments/assets/719fdde5-186a-409a-8628-9e130408dfc6" />
+
+
+
 Лаба 6
 
 Построить РВ, описывающее HTML-комментарии.
