@@ -9,6 +9,7 @@ namespace kursach
     {
         private string currentFilePath = string.Empty;
         private bool isTextChanged = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -70,7 +71,7 @@ namespace kursach
                 isTextChanged = false;
             }
         }
-        
+
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
             isTextChanged = true;
@@ -81,7 +82,8 @@ namespace kursach
         {
             if (isTextChanged)
             {
-                DialogResult result = MessageBox.Show("Вы хотите сохранить изменения перед выходом?", "Сохранение", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Вы хотите сохранить изменения перед выходом?", "Сохранение",
+                    MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
@@ -130,7 +132,7 @@ namespace kursach
         {
             richTextBox1.SelectAll();
         }
-        
+
         private void постановкаЗадачиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -154,7 +156,7 @@ namespace kursach
                 MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         private void грамматикаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -178,7 +180,7 @@ namespace kursach
                 MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         private void классификацияГрамматикиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -226,7 +228,7 @@ namespace kursach
                 MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         private void диагностикаИНейтрализацияОшибокToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -250,7 +252,7 @@ namespace kursach
                 MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         private void тестовыйПримерToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -274,7 +276,7 @@ namespace kursach
                 MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         private void списокЛитературыToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -298,7 +300,7 @@ namespace kursach
                 MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         private void исходныйКодПрограммыToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -322,7 +324,7 @@ namespace kursach
                 MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         private void вызовСправкиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -459,28 +461,28 @@ namespace kursach
                 MessageBoxIcon.Information
             );
         }
-        
+
         private void toolStripButton12_Click(object sender, EventArgs e)
         {
             string input = richTextBox1.Text;
             string pattern = @"<!--.*?-->";
             Regex regex = new Regex(pattern, RegexOptions.Singleline); // Singleline - чтобы . захватывал \n
-        
+
             MatchCollection matches = regex.Matches(input);
-        
+
             foreach (Match match in matches)
             {
                 richTextBox2.Text += match.Value;
             }
         }
-        
+
         private void toolStripButton13_Click(object sender, EventArgs e)
         {
             string input = richTextBox1.Text;
             string pattern = @"\b(20(1[0-9]|2[0-4]))\b";
-        
+
             MatchCollection matches = Regex.Matches(input, pattern);
-        
+
             foreach (Match match in matches)
             {
                 richTextBox2.Text += match.Value + " ";
@@ -489,20 +491,22 @@ namespace kursach
 
         private void toolStripButton14_Click(object sender, EventArgs e)
         {
-            string[] paths = {
+            string[] paths =
+            {
                 "C:\\Windows\\System32\\cmd.exe",
                 "\\\\Server\\Share\\file.txt",
                 "Folder\\Subfolder\\document.docx",
                 ".\\config.json",
                 "..\\archive.zip",
-                "invalid|file.txt"  // Невалидный путь
+                "invalid|file.txt" // Невалидный путь
             };
             richTextBox1.Text = "C:\\Windows\\System32\\cmd.exe" + "\\\\Server\\Share\\file.txt" +
-                "Folder\\Subfolder\\document.docx" +
-                ".\\config.json" +
-                "..\\archive.zip" +
-                "invalid|file.txt";
-            string pattern = @"^(?:[a-zA-Z]:\\|\\\\[^\\\/:*?""<>|\r\n]+\\[^\\\/:*?""<>|\r\n]+\\|\.{0,2}\\)?(?:[^\\\/:*?""<>|\r\n]+\\)*[^\\\/:*?""<>|\r\n]*$";
+                                "Folder\\Subfolder\\document.docx" +
+                                ".\\config.json" +
+                                "..\\archive.zip" +
+                                "invalid|file.txt";
+            string pattern =
+                @"^(?:[a-zA-Z]:\\|\\\\[^\\\/:*?""<>|\r\n]+\\[^\\\/:*?""<>|\r\n]+\\|\.{0,2}\\)?(?:[^\\\/:*?""<>|\r\n]+\\)*[^\\\/:*?""<>|\r\n]*$";
 
             Regex regex = new Regex(pattern);
 
@@ -515,21 +519,155 @@ namespace kursach
 
         private void richTextBox2_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
+
+        // private void пускToolStripMenuItem_Click(object sender, EventArgs e)
+        // {
+        //     string input = richTextBox1.Text;
+        //     Lexer lexer = new(input);
+        //     var tokens = lexer.Tokenize();
+        //
+        //     Parser parser = new(tokens);
+        //     var errors = parser.Parse();
+        //
+        //     richTextBox2.Text = errors.Count == 0
+        //         ? "Ошибок не обнаружено"
+        //         : string.Join(Environment.NewLine, errors);
+        // }
 
         private void пускToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string input = richTextBox1.Text;
-            Lexer lexer = new(input);
-            var tokens = lexer.Tokenize();
+            try
+            {
+                string program = richTextBox1.Text;
+                richTextBox2.Clear();
 
-            Parser parser = new(tokens);
-            var errors = parser.Parse();
+                var parser = new FalseParser(program);
+                parser.SetOutput(richTextBox2);
 
-            richTextBox2.Text = errors.Count == 0
-                ? "Ошибок не обнаружено"
-                : string.Join(Environment.NewLine, errors);
+                richTextBox2.AppendText("Начало анализа программы...\n");
+                parser.ParseProgram();
+
+                if (parser.HasErrors)
+                {
+                    richTextBox2.AppendText("\nАнализ завершен с ошибками.");
+                }
+                else
+                {
+                    richTextBox2.AppendText("\nАнализ завершен успешно. Ошибок не обнаружено.");
+                }
+            }
+            catch (Exception ex)
+            {
+                richTextBox2.Text = $"Ошибка при анализе: {ex.Message}";
+            }
+        }
+
+        public class FalseParser
+        {
+            private string input;
+            private int pos;
+            private RichTextBox output;
+            public bool HasErrors { get; private set; }
+
+            public FalseParser(string program)
+            {
+                this.input = program;
+                this.pos = 0;
+                this.HasErrors = false;
+            }
+
+            public void SetOutput(RichTextBox outputBox)
+            {
+                this.output = outputBox;
+            }
+
+            private void Error(string message)
+            {
+                HasErrors = true;
+                output.AppendText($"Ошибка в позиции {pos}: {message}\n");
+            }
+
+            private char Peek()
+            {
+                return pos < input.Length ? input[pos] : '\0';
+            }
+
+            private void Match(char expected)
+            {
+                if (Peek() == expected)
+                {
+                    pos++;
+                }
+                else
+                {
+                    Error($"Ожидался символ '{expected}', но получен '{Peek()}'");
+                }
+            }
+
+            public void ParseProgram()
+            {
+                while (Peek() != '\0' && !HasErrors)
+                {
+                    ParseInstr();
+                }
+            }
+
+            private void ParseInstr()
+            {
+                char current = Peek();
+                switch (current)
+                {
+                    case '+':
+                    case '-':
+                    case '*':
+                    case '/':
+                    case '_':
+                    case '=':
+                    case '>':
+                    case '&':
+                    case '|':
+                    case '~':
+                    case '$':
+                    case '%':
+                    case '\\':
+                    case '@':
+                        output.AppendText($"Найдена инструкция: {current}\n");
+                        pos++;
+                        break;
+                    case '[':
+                        output.AppendText("Начало цикла [\n");
+                        pos++; // Пропускаем '['
+
+                        // Сохраняем текущую позицию для проверки прогресса
+                        int lastPos = -1;
+                        while (Peek() != ']' && !HasErrors)
+                        {
+                            // Защита от бесконечного цикла
+                            if (pos == lastPos)
+                            {
+                                Error("Нет прогресса при разборе цикла");
+                                break;
+                            }
+
+                            lastPos = pos;
+
+                            ParseInstr();
+                        }
+
+                        Match(']'); // Проверяем закрывающую ']'
+                        output.AppendText("Конец цикла ]\n");
+                        break;
+                    case ']':
+                        // Выходим из рекурсии при встрече ']'
+                        return;
+                    default:
+                        Error($"Неизвестная инструкция '{current}'");
+                        pos++; // Продолжаем анализ после ошибки
+                        break;
+                }
+            }
         }
     }
 }
