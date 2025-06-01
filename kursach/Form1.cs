@@ -602,7 +602,7 @@ namespace kursach
                 }
                 else
                 {
-                    Error($"Ожидался символ '{expected}', но получен '{Peek()}'");
+                    Error($"Ожидался символ '{expected}'");
                 }
             }
 
