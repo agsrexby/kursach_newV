@@ -183,7 +183,8 @@ G[Program]:
 
 1. Program -> ε | Instr Program
 
-2. Program ']' 
+2. Program ']'
+ 
    Instr -> '+' | '-' | '*' | '/' | '_' | '=' | '>' | '&' | '|' | '~' | '$' | '%' | '\' | '@' | '[' 
 
 
