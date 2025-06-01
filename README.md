@@ -191,12 +191,14 @@ L(G[Program]) =  {+, -, *, /, _, =, >, &, |, ~, $, %, , @, [, ]}
 Согласно классификации Хомского, грамматика G[Выражение] является контекстно-свободной, так как имеет вид:
 A → α, где A∈VN, α∈V*.
 ## Схема вызова
-![{791E8646-9550-47CB-AED0-1756F972A6C3}](https://github.com/user-attachments/assets/b798e36b-9b49-4404-aabf-393234dbc694)
+
+![image](https://github.com/user-attachments/assets/4a71e75a-d71f-4c26-91d7-a6ea64716e20)
 
 
 
 ## Тестовые примеры
-![{D47D4CF3-19BB-4EA0-99AE-29519D7F7C50}](https://github.com/user-attachments/assets/9bf3f456-98e0-4de1-91e9-b189620a8c14)
+
+![image](https://github.com/user-attachments/assets/9e89dd8d-8e78-47b6-b9de-732a8e597c5b)
 
 
 ## Примеры допустимых строк
