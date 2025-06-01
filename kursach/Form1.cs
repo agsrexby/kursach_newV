@@ -542,6 +542,11 @@ namespace kursach
             {
                 string program = richTextBox1.Text;
                 richTextBox2.Clear();
+                if (string.IsNullOrWhiteSpace(program))
+                {
+                    richTextBox2.Text = "Пустая программа (ε)\n";
+                    return;
+                }
 
                 var parser = new FalseParser(program);
                 parser.SetOutput(richTextBox2);
